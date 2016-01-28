@@ -56,6 +56,11 @@ public class Game implements Serializable{
     }
 
     @Override
+    public String toString() {
+        return "Game{" + "totalTime=" + totalTime + ", menu=" + menu + ", saveGame=" + saveGame + ", loadGame=" + loadGame + '}';
+    }
+   
+    @Override
     public int hashCode() {
         int hash = 7;
         hash = 47 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
