@@ -5,18 +5,22 @@
  */
 package Polymorphus;
 
+import byui.cit260.polymorphus.model.Game;
+
 /**
  *
  * @author Spencer
  */
 public class Polymorphus {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        Game mainGame = new Game();
         
-        // TODO code application logic here
+        mainGame.setTotalTime(30.00);
+        mainGame.setMenu("Main");
+        
+        String gameInfo = mainGame.toString();
+        System.out.println(gameInfo);
     }
     
 }

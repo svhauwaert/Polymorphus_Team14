@@ -5,24 +5,24 @@
  */
 package byui.cit260.polymorphus.model;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
- * @author Spencer
+ * @author Spencer Van Hauwaert
  */
 public class Game implements Serializable{
     
     // clas instance variables
     private double totalTime;
-    private int menu;
+    private String menu;
     private int saveGame;
     private int loadGame;
 
     public Game() {
     }
-    
-    
 
+    
     public double getTotalTime() {
         return totalTime;
     }
@@ -31,11 +31,11 @@ public class Game implements Serializable{
         this.totalTime = totalTime;
     }
 
-    public int getMenu() {
+    public String getMenu() {
         return menu;
     }
 
-    public void setMenu(int menu) {
+    public void setMenu(String menu) {
         this.menu = menu;
     }
 
@@ -55,21 +55,24 @@ public class Game implements Serializable{
         this.loadGame = loadGame;
     }
 
+    
+    
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
+        hash = 37 * hash + Objects.hashCode(this.menu);
+        hash = 37 * hash + this.saveGame;
+        hash = 37 * hash + this.loadGame;
+        return hash;
+    }
+
     @Override
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", menu=" + menu + ", saveGame=" + saveGame + ", loadGame=" + loadGame + '}';
     }
-   
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
-        hash = 47 * hash + this.menu;
-        hash = 47 * hash + this.saveGame;
-        hash = 47 * hash + this.loadGame;
-        return hash;
-    }
 
+        
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -82,7 +85,7 @@ public class Game implements Serializable{
         if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
             return false;
         }
-        if (this.menu != other.menu) {
+        if (!Objects.equals(this.menu, other.menu)) {
             return false;
         }
         if (this.saveGame != other.saveGame) {
@@ -93,6 +96,8 @@ public class Game implements Serializable{
         }
         return true;
     }
+
+    
     
     
 }
