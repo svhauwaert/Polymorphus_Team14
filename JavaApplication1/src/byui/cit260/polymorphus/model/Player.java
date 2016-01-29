@@ -75,6 +75,29 @@ public class Player implements Serializable{
         return true;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBestTime(double bestTime) {
+        this.bestTime = bestTime;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
+    }
+
+    public void setAttackStrengh(double attackStrengh) {
+        this.attackStrengh = attackStrengh;
+    }
+
+    public void setArmor(double armor) {
+        this.armor = armor;
+    }
+
+    public void setWeaponClass(double weaponClass) {
+        this.weaponClass = weaponClass;
+    }
     
 
     public String getName() {
