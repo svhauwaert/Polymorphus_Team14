@@ -8,6 +8,7 @@ package Polymorphus;
 import byui.cit260.polymorphus.model.Game;
 import byui.cit260.polymorphus.model.Player;
 import byui.cit260.polymorphus.model.InventoryItem;
+import byui.cit260.polymorphus.model.Map;
 
 
 /**
@@ -43,6 +44,15 @@ public class Polymorphus {
         
         String inventory = inventoryitem.toString();
         System.out.println(inventory);
+        
+        //Map Class
+        Map level = new Map();
+        
+        level.setColumnCount(1);
+        level.setRowCount(1);
+        
+        String castlelevel = level.toString();
+        System.out.println(castlelevel);
     }
     
 }
