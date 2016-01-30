@@ -11,6 +11,7 @@ import byui.cit260.polymorphus.model.InventoryItem;
 import byui.cit260.polymorphus.model.Map;
 import byui.cit260.polymorphus.model.ItemBank;
 import byui.cit260.polymorphus.model.Weapons;
+import byui.cit260.polymorphus.model.Armor;
 
 
 /**
@@ -74,6 +75,15 @@ public class Polymorphus {
         String weaponitem = itemweapons.toString();
         System.out.println(weaponitem);
         
+         //Armor Class
+        Armor itemarmor = new Armor();
+        
+        itemarmor.setArmorDescription("Leather Armor");
+        itemarmor.setArmorStrengh(1);
+        itemarmor.setArmorHealth(10);
+        
+        String armoritem = itemarmor.toString();
+        System.out.println(armoritem);
         
         
         
