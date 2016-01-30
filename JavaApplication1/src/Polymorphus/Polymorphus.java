@@ -7,6 +7,8 @@ package Polymorphus;
 
 import byui.cit260.polymorphus.model.Game;
 import byui.cit260.polymorphus.model.Player;
+import byui.cit260.polymorphus.model.InventoryItem;
+
 
 /**
  *
@@ -32,6 +34,15 @@ public class Polymorphus {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        //Inventory Items functions class
+        InventoryItem inventoryitem = new InventoryItem();
+        
+        inventoryitem.setInventoyType("dagger");
+        inventoryitem.setQuantityInStock(1);
+        
+        String inventory = inventoryitem.toString();
+        System.out.println(inventory);
     }
     
 }
