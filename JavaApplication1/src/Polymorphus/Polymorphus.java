@@ -12,6 +12,7 @@ import byui.cit260.polymorphus.model.Map;
 import byui.cit260.polymorphus.model.ItemBank;
 import byui.cit260.polymorphus.model.Weapons;
 import byui.cit260.polymorphus.model.Armor;
+import byui.cit260.polymorphus.model.Potion;
 
 
 /**
@@ -85,8 +86,16 @@ public class Polymorphus {
         String armoritem = itemarmor.toString();
         System.out.println(armoritem);
         
+       //Potion Class 
+        Potion mixture = new Potion();
         
+        mixture.setCombineItems("Mix these items");
+        mixture.setPotionRecipe("Water,Blood and Powder");
         
+        String potionmix = mixture.toString();
+        System.out.println(potionmix);
+        
+   
     }
     
 }
