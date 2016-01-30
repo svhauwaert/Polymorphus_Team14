@@ -10,6 +10,7 @@ import byui.cit260.polymorphus.model.Player;
 import byui.cit260.polymorphus.model.InventoryItem;
 import byui.cit260.polymorphus.model.Map;
 import byui.cit260.polymorphus.model.ItemBank;
+import byui.cit260.polymorphus.model.Weapons;
 
 
 /**
@@ -62,6 +63,19 @@ public class Polymorphus {
         
         String dagger = summary.toString();
         System.out.println(dagger);
+        
+        //Weapons Class
+        Weapons itemweapons = new Weapons();
+        
+        itemweapons.setWeaponDescription("Sharp dagger");
+        itemweapons.setWeaponStrengh(1);
+        itemweapons.setWeaponHealth(10);
+        
+        String weaponitem = itemweapons.toString();
+        System.out.println(weaponitem);
+        
+        
+        
         
     }
     
