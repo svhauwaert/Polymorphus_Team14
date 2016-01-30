@@ -9,6 +9,7 @@ import byui.cit260.polymorphus.model.Game;
 import byui.cit260.polymorphus.model.Player;
 import byui.cit260.polymorphus.model.InventoryItem;
 import byui.cit260.polymorphus.model.Map;
+import byui.cit260.polymorphus.model.ItemBank;
 
 
 /**
@@ -53,6 +54,15 @@ public class Polymorphus {
         
         String castlelevel = level.toString();
         System.out.println(castlelevel);
+        
+        //Inventory Bank class for descriptions
+        ItemBank summary = new ItemBank();
+        
+        summary.setDescription("Sharp Dagger");
+        
+        String dagger = summary.toString();
+        System.out.println(dagger);
+        
     }
     
 }
