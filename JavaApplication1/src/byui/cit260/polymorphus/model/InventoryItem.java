@@ -16,7 +16,7 @@ public class InventoryItem implements Serializable{
 
 
     // class instance variables
-    private String inventoyType;
+    private String inventoryType;
     private double quantityInStock;
     private double requiredAmount;
 
@@ -25,12 +25,12 @@ public class InventoryItem implements Serializable{
 
     
     
-    public String getInventoyType() {
-        return inventoyType;
+    public String getInventoryType() {
+        return inventoryType;
     }
 
-    public void setInventoyType(String inventoyType) {
-        this.inventoyType = inventoyType;
+    public void setInventoryType(String inventoryType) {
+        this.inventoryType = inventoryType;
     }
 
     public double getQuantityInStock() {
@@ -44,7 +44,7 @@ public class InventoryItem implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 61 * hash + Objects.hashCode(this.inventoyType);
+        hash = 61 * hash + Objects.hashCode(this.inventoryType);
         hash = 61 * hash + (int) (Double.doubleToLongBits(this.quantityInStock) ^ (Double.doubleToLongBits(this.quantityInStock) >>> 32));
         hash = 61 * hash + (int) (Double.doubleToLongBits(this.requiredAmount) ^ (Double.doubleToLongBits(this.requiredAmount) >>> 32));
         return hash;
@@ -52,7 +52,7 @@ public class InventoryItem implements Serializable{
 
     @Override
     public String toString() {
-        return "InventoryItem{" + "inventoyType=" + inventoyType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
+        return "InventoryItem{" + "inventoyType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
     }
 
     
@@ -74,7 +74,7 @@ public class InventoryItem implements Serializable{
         if (Double.doubleToLongBits(this.requiredAmount) != Double.doubleToLongBits(other.requiredAmount)) {
             return false;
         }
-        if (!Objects.equals(this.inventoyType, other.inventoyType)) {
+        if (!Objects.equals(this.inventoryType, other.inventoryType)) {
             return false;
         }
         return true;
@@ -88,10 +88,5 @@ public class InventoryItem implements Serializable{
     public void setRequiredAmount(double requiredAmount) {
         this.requiredAmount = requiredAmount;
     }
-
-    public void setInventoryType(String dagger) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-   
     
 }
