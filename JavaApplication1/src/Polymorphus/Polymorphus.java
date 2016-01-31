@@ -12,7 +12,13 @@ import byui.cit260.polymorphus.model.Map;
 import byui.cit260.polymorphus.model.ItemBank;
 import byui.cit260.polymorphus.model.Weapons;
 import byui.cit260.polymorphus.model.Armor;
+import byui.cit260.polymorphus.model.CastleLevel;
+import byui.cit260.polymorphus.model.CastleRoom;
+import byui.cit260.polymorphus.model.Doctor;
+import byui.cit260.polymorphus.model.PlayerAction;
 import byui.cit260.polymorphus.model.Potion;
+import byui.cit260.polymorphus.model.SceneType;
+import byui.cit260.polymorphus.model.Character;
 
 
 /**
@@ -23,6 +29,7 @@ import byui.cit260.polymorphus.model.Potion;
 public class Polymorphus {
 
     public static void main(String[] args) {
+        // Game class functions
         Game mainGame = new Game();
         
         mainGame.setTotalTime(30.00);
@@ -40,13 +47,67 @@ public class Polymorphus {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
+        // Doctor class functions
+        Doctor gameDoctor = new Doctor();
+        
+        gameDoctor.setPayment(25);
+        gameDoctor.setReturnMessage("Loved one is okay.");
+        
+        String doctorInfo = gameDoctor.toString();
+        System.out.println(doctorInfo);
+        
+        // Character class functions
+        Character gameCharacter = new Character();
+        
+        gameCharacter.setNameChar("Ogre");
+        gameCharacter.setDescChar("Tall and ugly.");
+        
+        String characterInfo = gameCharacter.toString();
+        System.out.println(characterInfo);
+        
+        // Castle level class functions
+        CastleLevel firstLevel = new CastleLevel();
+        
+        firstLevel.setCol(3);
+        firstLevel.setRow(5);
+        
+        String levelInfo = firstLevel.toString();
+        System.out.println(levelInfo);
+        
+        // Castle room class functions
+        CastleRoom tortureChamber = new CastleRoom();
+        
+        tortureChamber.setDescRoom("This is the torture chamber room");
+        tortureChamber.setVisitRoom(1);
+        
+        String tortureInfo = tortureChamber.toString();
+        System.out.println(tortureInfo);
+        
+        // Scene type class functions
+        SceneType torturePuzzle = new SceneType();
+        
+        torturePuzzle.setDescScene("You must find a way out of this room");
+        torturePuzzle.setCallingCombat(1);
+        
+        String puzzleInfo = torturePuzzle.toString();
+        System.out.println(puzzleInfo);
+        
+        // Player action class functions
+        PlayerAction playerAttack = new PlayerAction();
+        
+        playerAttack.setMixPotion(5);
+        playerAttack.setCombat(9);
+        
+        String actionInfo = playerAttack.toString();
+        System.out.println(actionInfo);
+        
         //Inventory Items functions class
-        InventoryItem inventoryitem = new InventoryItem();
+        InventoryItem inventoryWeapon = new InventoryItem();
         
-        inventoryitem.setInventoyType("dagger");
-        inventoryitem.setQuantityInStock(1);
+        inventoryWeapon.setInventoryType("dagger");
+        inventoryWeapon.setQuantityInStock(1);
         
-        String inventory = inventoryitem.toString();
+        String inventory = inventoryWeapon.toString();
         System.out.println(inventory);
         
         //Map Class
@@ -55,8 +116,8 @@ public class Polymorphus {
         level.setColumnCount(1);
         level.setRowCount(1);
         
-        String castlelevel = level.toString();
-        System.out.println(castlelevel);
+        String castleLevelMap = level.toString();
+        System.out.println(castleLevelMap);
         
         //Inventory Bank class for descriptions
         ItemBank summary = new ItemBank();
@@ -67,14 +128,14 @@ public class Polymorphus {
         System.out.println(dagger);
         
         //Weapons Class
-        Weapons itemweapons = new Weapons();
+        Weapons itemWeapons = new Weapons();
         
-        itemweapons.setWeaponDescription("Sharp dagger");
-        itemweapons.setWeaponStrengh(1);
-        itemweapons.setWeaponHealth(10);
+        itemWeapons.setWeaponDescription("Sharp dagger");
+        itemWeapons.setWeaponStrengh(1);
+        itemWeapons.setWeaponHealth(10);
         
-        String weaponitem = itemweapons.toString();
-        System.out.println(weaponitem);
+        String weaponItem = itemWeapons.toString();
+        System.out.println(weaponItem);
         
          //Armor Class
         Armor itemarmor = new Armor();
@@ -94,6 +155,7 @@ public class Polymorphus {
         
         String potionmix = mixture.toString();
         System.out.println(potionmix);
+
         
    
     }

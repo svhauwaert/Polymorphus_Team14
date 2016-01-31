@@ -88,6 +88,10 @@ public class InventoryItem implements Serializable{
     public void setRequiredAmount(double requiredAmount) {
         this.requiredAmount = requiredAmount;
     }
+
+    public void setInventoryType(String dagger) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
     
 }
