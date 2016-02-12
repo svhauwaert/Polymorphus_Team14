@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byu.cit260.polymorphus.view;
+package byui.cit260.polymorphus.control;
 
 /**
  *
- * @author swalters
+ * @author Spencer
  */
-public class NewClass {
+public class PotionControl {
     
 }
