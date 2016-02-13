@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  *
  * @author Spencer Van Hauwaert
  */
-public class DoctorControlTest {
+public class ActionControlTest {
     
-    public DoctorControlTest() {
+    public ActionControlTest() {
     }
     
     @Before
@@ -28,10 +28,10 @@ public class DoctorControlTest {
     }
 
     /**
-     * Test of amountNeeded method, of class DoctorControl.
+     * Test of fightCharacter method, of class ActionControl.
      */
     @Test
-    public void testAmountNeeded() {
+    public void testFightCharacter() {
         
         /********************************
          * Test case # 1
@@ -40,15 +40,15 @@ public class DoctorControlTest {
         System.out.println("\tTest case #1");
         
         // input values for test case #1
-        double basicCost = 100.0;
-        double medicalRate = 0.1;
-        double gameTime = 20.0;
-        DoctorControl instance = new DoctorControl();
-        double expResult = 300.0;
+        int attackStrength = 30;
+        int weaponClass = 5;
+        int armorChar = 10;
+        ActionControl instance = new ActionControl();
+        int expResult = 25;
         
         // call function to test case
-        double result = instance.amountNeeded(basicCost, medicalRate, gameTime);
-        assertEquals(expResult, result, 0.0);
+        int result = instance.fightCharacter(attackStrength, weaponClass, armorChar);
+        assertEquals(expResult, result);
         
         
         /********************************
@@ -58,100 +58,100 @@ public class DoctorControlTest {
         System.out.println("\tTest case #2");
         
         // input values for test case #2
-        basicCost = 75.0;
-        medicalRate = -10;
-        gameTime = 50.0;
+        attackStrength = 25;
+        weaponClass = -10;
+        armorChar = 10;
         
-        expResult = -1.0;
+        expResult = -1;
         
         // call function to test case
-        result = instance.amountNeeded(basicCost, medicalRate, gameTime);
-        assertEquals(expResult, result, 0.0);
-        
+        result = instance.fightCharacter(attackStrength, weaponClass, armorChar);
+        assertEquals(expResult, result);
         
         /********************************
-         * Test case # 3
-         *******************************/
+         * Test case # 23         *******************************/
         
         System.out.println("\tTest case #3");
         
         // input values for test case #3
-        basicCost = -50.0;
-        medicalRate = 100.0;
-        gameTime = 70.0;
+        attackStrength = 20;
+        weaponClass = 15;
+        armorChar = -10;
         
-        expResult = -1.0;
+        expResult = -1;
         
         // call function to test case
-        result = instance.amountNeeded(basicCost, medicalRate, gameTime);
-        assertEquals(expResult, result, 0.0);
+        result = instance.fightCharacter(attackStrength, weaponClass, armorChar);
+        assertEquals(expResult, result);
         
         /********************************
-         * Test case #4
+         * Test case # 4
          *******************************/
         
         System.out.println("\tTest case #4");
         
         // input values for test case #4
-        basicCost = 50.0;
-        medicalRate = 10.0;
-        gameTime = 110.0;
+        attackStrength = -15;
+        weaponClass = 20;
+        armorChar = 5;
         
-        expResult = -1.0;
+        expResult = -1;
         
         // call function to test case
-        result = instance.amountNeeded(basicCost, medicalRate, gameTime);
-        assertEquals(expResult, result, 0.0);
+        result = instance.fightCharacter(attackStrength, weaponClass, armorChar);
+        assertEquals(expResult, result);
         
         /********************************
-         * Test case #5
+         * Test case # 5
          *******************************/
         
         System.out.println("\tTest case #5");
         
         // input values for test case #5
-        basicCost = 100.0;
-        medicalRate = 0.1;
-        gameTime = 0.0;
+        attackStrength = 0;
+        weaponClass = 20;
+        armorChar = 15;
         
-        expResult = 100.0;
+        expResult = 5;
         
         // call function to test case
-        result = instance.amountNeeded(basicCost, medicalRate, gameTime);
-        assertEquals(expResult, result, 0.0);
+        result = instance.fightCharacter(attackStrength, weaponClass, armorChar);
+        assertEquals(expResult, result);
         
         /********************************
-         * Test case #6
+         * Test case # 6
          *******************************/
         
         System.out.println("\tTest case #6");
         
         // input values for test case #6
-        basicCost = 100.0;
-        medicalRate = 0.1;
-        gameTime = 100.0;
+        attackStrength = 30;
+        weaponClass = 0;
+        armorChar = 10;
         
-        expResult = 1100.0;
+        expResult = 20;
         
         // call function to test case
-        result = instance.amountNeeded(basicCost, medicalRate, gameTime);
-        assertEquals(expResult, result, 0.0);
+        result = instance.fightCharacter(attackStrength, weaponClass, armorChar);
+        assertEquals(expResult, result);
         
         /********************************
-         * Test case #7
+         * Test case # 7
          *******************************/
         
         System.out.println("\tTest case #7");
         
         // input values for test case #7
-        basicCost = 100.0;
-        medicalRate = 0.1;
-        gameTime = 110.0;
+        attackStrength = 30;
+        weaponClass = 5;
+        armorChar = 0;
         
-        expResult = -1.0;
+        expResult = 35;
         
         // call function to test case
-        result = instance.amountNeeded(basicCost, medicalRate, gameTime);
-        assertEquals(expResult, result, 0.0);
+        result = instance.fightCharacter(attackStrength, weaponClass, armorChar);
+        assertEquals(expResult, result);
     }
+    
+    
 }
