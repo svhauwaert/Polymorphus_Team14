@@ -1,5 +1,7 @@
 package byui.cit260.polymorphus.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Spencer Van Hauwaert
@@ -17,7 +19,7 @@ public class StartProgramView {
         this.displayBanner();
         
         // prompt the player to enter their name - retrieve  the name of the player
-        //String playersName = this.getPlayersName();
+        String playersName = this.getPlayersName();
         
         // Create and save the player object
         
@@ -70,9 +72,9 @@ public class StartProgramView {
         System.out.println("****************************************************");
     }
 
-    /*private String getPlayersName() {
+    private String getPlayersName() {
         boolean valid = false; // indicates if the name has be retrieved
-        String playerName = null;
+        String playersName = null;
         Scanner keyboard = new Scanner(System.in); // keyboard input stream
         
         while(!valid) { // while a valid name has not been retrieved
@@ -93,6 +95,6 @@ public class StartProgramView {
         }
         
         return playersName; // return the name
-    } */
+    } 
     
 }
