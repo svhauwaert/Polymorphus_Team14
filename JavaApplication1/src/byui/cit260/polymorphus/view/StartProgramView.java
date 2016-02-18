@@ -18,6 +18,7 @@ public class StartProgramView {
         
         // prompt the player to enter their name - retrieve  the name of the player
         //String playersName = this.getPlayersName();
+        
         // Create and save the player object
         
         // Display a personalized welcome message
@@ -69,7 +70,7 @@ public class StartProgramView {
         System.out.println("****************************************************");
     }
 
-    /** private String getPlayersName() {
+    /*private String getPlayersName() {
         boolean valid = false; // indicates if the name has be retrieved
         String playerName = null;
         Scanner keyboard = new Scanner(System.in); // keyboard input stream
@@ -79,9 +80,19 @@ public class StartProgramView {
             // prompt for the player's name
             System.out.println("Enter the player's name below:");
             
-            // get the name from the keyboard
+            // get the name from the keyboard and trim off the blanks
+            playersName = keyboard.nextLine();
+            playersName = playersName.trim();
             
+            // if the name is invalid (less than two character in length)
+            if (playersName.length() < 2) {
+                System.out.println("Invalid name - the name must not be blank");
+                continue; // and repeat again
+            }
+            break; // out of the (exit) repetition
         }
+        
+        return playersName; // return the name
     } */
     
 }
