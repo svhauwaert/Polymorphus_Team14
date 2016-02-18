@@ -32,5 +32,5 @@ public class MainMenuView {
             this.doAction(selection); //do action based on selection
         
         } while (selection != 'E'); //an selection is not "Exit"
-        
-    }
+    } 
+ }
