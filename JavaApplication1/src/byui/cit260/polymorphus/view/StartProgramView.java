@@ -96,5 +96,7 @@ public class StartProgramView {
         
         return playersName; // return the name
     } 
-    
+    // Display the main menu.
+    MainMenuView mainMenuView = new MainMenuView();
+    mainMenuView.displayMenu();
 }
