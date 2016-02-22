@@ -1,11 +1,13 @@
 package byui.cit260.polymorphus.view;
 
+import byui.cit260.polymorphus.control.ProgramControl;
+import byui.cit260.polymorphus.model.Player;
 import java.util.Scanner;
 
 /**
  *
  * @author Spencer Van Hauwaert
- *         Spencer Walters
+ *         
  */
 public class StartProgramView {
     
@@ -21,11 +23,17 @@ public class StartProgramView {
         // prompt the player to enter their name - retrieve  the name of the player
         String playersName = this.getPlayersName();
         
-        // Create and save the player object
+        // Create the player object and save the player object in the ProgramControl class
+        Player player = ProgramControl.createPlayer(playersName);
         
         // Display a personalized welcome message
+        this.displayWelcomeMessage(player);
         
-        // Display the Main menu
+        // Display the main menu.
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMenu();
+        HelpMenuView helpMenu = new HelpMenuView(); // Added for testing purposes
+        helpMenu.displayHelpMenu();
     }
 
     private void displayBanner() {
@@ -95,8 +103,13 @@ public class StartProgramView {
         }
         
         return playersName; // return the name
-    } 
-    // Display the main menu.
-    MainMenuView mainMenuView = new MainMenuView();
-    mainMenuView.displayMenu();
+    }
+    
+    public void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n=============================================");
+        System.out.println("\tWelcome to the game " + player.getName());
+        System.out.println("We hope you have a lot of fun!");
+        System.out.println("=============================================");
+    }
+    
 }
