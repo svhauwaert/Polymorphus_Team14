@@ -32,8 +32,7 @@ public class StartProgramView {
         // Display the main menu.
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMenu();
-        HelpMenuView helpMenu = new HelpMenuView(); // Added for testing purposes
-        helpMenu.displayHelpMenu();
+        
     }
 
     private void displayBanner() {
