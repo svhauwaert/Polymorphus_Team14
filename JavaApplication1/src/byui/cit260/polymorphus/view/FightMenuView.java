@@ -11,21 +11,21 @@ import java.util.Scanner;
  *
  * @author Spencer Van Hauwaert
  */
-public class HelpMenuView {
+public class FightMenuView {
 
     private final String MENU = "\n"
                 + "\n--------------------------------------------------"
-                + "\n|  Help Menu                                       |"
+                + "\n|  Fight Menu                                      |"
                 + "\n--------------------------------------------------"
-                + "\nG - What is the goal of the game?"
-                + "\nM - How to move"
-                + "\nD - How to contact the Doctor"
-                + "\nA - How to change armor and weapons"
-                + "\nF - How to fight"
-                + "\nQ - Quit menu"
+                + "\nH - How do you fight a character?"
+                + "\nS - How do you sharpen a weapon?"
+                + "\nD - When do you know you or your opponent are dead?"
+                + "\nB - How do you block orparry in a fight?"
+                + "\nW- How do you know you won the fight?"
+                + "\nQ - Quit fight menu"
                 + "\n--------------------------------------------------";
         
-    public void displayHelpMenu() {
+    public void displayFightMenu() {
             char selection = ' ';
             do {
                 
@@ -67,48 +67,47 @@ public class HelpMenuView {
     public void doAction(char choice){
         
         switch (choice) {
-            case 'G': // display game goal information
-                this.displayGameGoal();
+            case 'H': // display how to fight character
+                this.displayFightInfo();
                 break;
-            case 'M': // display how to move around
-                this.displayMoveGame();
+            case 'S': // display how to sharpen weapon
+                this.displayFixWeapon();
                 break;
-            case 'D': // display how to call the doctor
-                this.displayDoctorGame();
+            case 'D': // display how you know you/opponent died
+                this.displayDeadInfo();
                 break;
-            case 'A': // display how to change armor or weapons
-                this.displayArmorGame();
+            case 'B': // display how to block or parry in fight
+                this.displayBlockInfo();
                 break;
-            case 'F': // display how to fight
-                this.displayFightMenu();
+            case 'W': // display when you won fight
+                this.displayWinInfo();
                 break;
-            case 'Q': // quit the help menu
+            case 'Q': // quit the fight menu
                 return;
             default:
                 System.out.println("\n*** Invalid Selection *** Try again");
                 break;
         }
-    }    
-
-    private void displayGameGoal() {
-        System.out.println("*** displayGameGoal function ***");
     }
 
-    private void displayMoveGame() {
-        System.out.println("*** displayMoveGame function ***");
+    private void displayFightInfo() {
+        System.out.println("*** displayFightInfo function ***");
     }
 
-    private void displayDoctorGame() {
-        System.out.println("*** displayDoctorGame function ***");
+    private void displayFixWeapon() {
+        System.out.println("*** displayFixWeapon function ***");
     }
 
-    private void displayArmorGame() {
-        System.out.println("*** displayArmorGame function ***");
+    private void displayDeadInfo() {
+        System.out.println("*** displayDeadInfo function ***");
     }
 
-    private void displayFightMenu() {
-        FightMenuView fightMenu = new FightMenuView();
-        fightMenu.displayFightMenu();
+    private void displayBlockInfo() {
+        System.out.println("*** displayBlockInfo function ***");
+    }
+
+    private void displayWinInfo() {
+        System.out.println("*** displayWinInfo function ***");
     }
     
 }

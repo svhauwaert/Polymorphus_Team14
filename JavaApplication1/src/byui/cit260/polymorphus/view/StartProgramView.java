@@ -35,6 +35,9 @@ public class StartProgramView {
 
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMenu();
+        //HelpMenuView helpMenuView = new HelpMenuView();
+        //helpMenuView.displayHelpMenu();
+                
         
 
     }

@@ -35,11 +35,7 @@ public class MainMenuView {
             this.doAction(selection); //do action based on selection
         
         } while (selection != 'E'); //an selection is not "Exit"
-
-    }
- }
-
-     
+    } 
     
     private String getInput() {
         boolean valid = false; // indicates if the option has be retrieved
@@ -87,8 +83,7 @@ public class MainMenuView {
                 System.out.println("\n*** Invalid Selection *** Try again");
                 break;
         }
-    } 
-    private void startNewGame() {
+    } private void startNewGame() {
         System.out.println("*** displayGameGoal function ***");
     }
 
@@ -106,5 +101,4 @@ public class MainMenuView {
         System.out.println("*** displayArmorGame function ***");
     }
     
-   
-}
+}   
