@@ -7,7 +7,7 @@ package byui.cit260.polymorphus.control;
 
 /**
  *
- * @author Spencer
+ * @author Spencer Van Hauwaert
  */
 public class ActionControl {
     
