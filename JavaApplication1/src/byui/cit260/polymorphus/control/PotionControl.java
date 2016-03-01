@@ -7,7 +7,7 @@ package byui.cit260.polymorphus.control;
 
 /**
  *
- * @author Spencer
+ * @author Spencer Walters
  */
 public class PotionControl {
     

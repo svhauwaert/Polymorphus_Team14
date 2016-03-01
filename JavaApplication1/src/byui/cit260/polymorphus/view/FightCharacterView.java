@@ -9,27 +9,25 @@ import java.util.Scanner;
 
 /**
  *
- * @author Spencer Van Hauwaert
+ * @author Spencer
  */
-public class FightMenuView {
-
+public class FightCharacterView {
+    
     private final String MENU = "\n"
                 + "\n--------------------------------------------------"
-                + "\n|  Fight Menu                                      |"
+                + "\n|  Fight Character Scene                                      |"
                 + "\n--------------------------------------------------"
-                + "\nH - How do you fight a character?"
-                + "\nS - How do you sharpen a weapon?"
-                + "\nD - When do you know you or your opponent are dead?"
-                + "\nB - How do you block orparry in a fight?"
-                + "\nW - How do you know you won the fight?"
-                + "\nQ - Quit fight menu"
+                + "\nA - Attack the character"
+                + "\nB - Block character's attack"
+                + "\nP - Parry the character's attack"
+                + "\nQ - Quit the fight"
                 + "\n--------------------------------------------------";
         
-    public void displayFightMenu() {
+    public void displayFightScene() {
             char selection = ' ';
             do {
                 
-                System.out.println(MENU); // display the help menu
+                System.out.println(MENU); // display the fight scenerio
                 
                 String input = this.getInput(); // get the user's selection
                 selection = input.charAt(0); // get first character of string
@@ -46,8 +44,8 @@ public class FightMenuView {
         
         while(!valid) { // while a valid option has not been retrieved
             
-            // prompt for the player's menu choice
-            System.out.println("Enter a menu selection:");
+            // prompt for the player's fight choice
+            System.out.println("Enter a fight selection:");
             
             // get the option from the keyboard and trim off the blanks
             playersInput = keyboard.nextLine();
@@ -55,7 +53,7 @@ public class FightMenuView {
             
             // if the option is invalid
             if (playersInput == " ") {
-                System.out.println("Invalid menu choice - Please choose from the above options");
+                System.out.println("Invalid fight choice - Please choose from the above options");
                 continue; // and repeat again
             }
             break; // out of the (exit) repetition
@@ -67,22 +65,16 @@ public class FightMenuView {
     public void doAction(char choice){
         
         switch (choice) {
-            case 'H': // display how to fight character
-                this.displayFightInfo();
+            case 'A': // display results from fight round
+                this.fightCharacter();
                 break;
-            case 'S': // display how to sharpen weapon
-                this.displayFixWeapon();
+            case 'B': // display results from blocking
+                this.displayBlock();
                 break;
-            case 'D': // display how you know you/opponent died
-                this.displayDeadInfo();
+            case 'P': // display results from parrying
+                this.displayParry();
                 break;
-            case 'B': // display how to block or parry in fight
-                this.displayBlockInfo();
-                break;
-            case 'W': // display when you won fight
-                this.displayWinInfo();
-                break;
-            case 'Q': // quit the fight menu
+            case 'Q': // quit the fight
                 return;
             default:
                 System.out.println("\n*** Invalid Selection *** Try again");
@@ -90,24 +82,15 @@ public class FightMenuView {
         }
     }
 
-    private void displayFightInfo() {
-        System.out.println("*** displayFightInfo function ***");
+    private void fightCharacter() {
+        System.out.println("\n*** This is were the fight function is called ***");
     }
 
-    private void displayFixWeapon() {
-        System.out.println("*** displayFixWeapon function ***");
+    private void displayBlock() {
+        System.out.println("\n*** Display blocking information ***");
     }
 
-    private void displayDeadInfo() {
-        System.out.println("*** displayDeadInfo function ***");
+    private void displayParry() {
+        System.out.println("\n*** Display parrying information ***");
     }
-
-    private void displayBlockInfo() {
-        System.out.println("*** displayBlockInfo function ***");
-    }
-
-    private void displayWinInfo() {
-        System.out.println("*** displayWinInfo function ***");
-    }
-    
 }

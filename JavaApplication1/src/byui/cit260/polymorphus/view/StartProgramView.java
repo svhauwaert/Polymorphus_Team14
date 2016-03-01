@@ -30,16 +30,9 @@ public class StartProgramView {
         this.displayWelcomeMessage(player);
         
         // Display the main menu.
-
-        
-
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMenu();
-        //HelpMenuView helpMenuView = new HelpMenuView();
-        //helpMenuView.displayHelpMenu();
-                
-        
-
+    
     }
 
     private void displayBanner() {
