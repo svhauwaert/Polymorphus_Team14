@@ -10,8 +10,8 @@ package byui.cit260.polymorphus.control;
  * @author Spencer Van Hauwaert
  */
 public class ActionControl {
-    
-    public int fightCharacter(int attackStrength, int weaponClass, int armorChar) {
+
+    public static int fightCharacter(int attackStrength, int weaponClass, int armorChar) {
 
      if (attackStrength < 0 || attackStrength > 30) { // players attack strength range
           return -1;

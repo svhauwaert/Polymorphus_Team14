@@ -5,6 +5,7 @@
  */
 package byui.cit260.polymorphus.view;
 
+import byui.cit260.polymorphus.control.ActionControl;
 import java.util.Scanner;
 
 /**
@@ -15,7 +16,7 @@ public class FightCharacterView {
     
     private final String MENU = "\n"
                 + "\n--------------------------------------------------"
-                + "\n|  Fight Character Scene                                      |"
+                + "\n|  Fight Character Scene                          |"
                 + "\n--------------------------------------------------"
                 + "\nA - Attack the character"
                 + "\nB - Block character's attack"
@@ -83,8 +84,13 @@ public class FightCharacterView {
     }
 
     private void fightCharacter() {
-        System.out.println("\n*** This is were the fight function is called ***");
+        int strength = 10;
+        int weapon = 3;
+        int armor = 5;
+        int result = ActionControl.fightCharacter(strength, weapon, armor);
+        System.out.println("\nYou hit the character with " + result + " strength.");
     }
+    
 
     private void displayBlock() {
         System.out.println("\n*** Display blocking information ***");
