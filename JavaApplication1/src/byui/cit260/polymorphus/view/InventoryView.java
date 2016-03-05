@@ -14,8 +14,7 @@ import java.util.Scanner;
  */
 public class InventoryView {
     
-  
-    private final String MENU = "\n"
+      private final String MENU = "\n"
                 + "\n--------------------------------------------------"
                 + "\n|  Inventory View                                |"
                 + "\n--------------------------------------------------"
