@@ -11,9 +11,10 @@ import java.util.Scanner;
  *
  * @author Spencer Van Hauwaert
  */
-public class FightMenuView {
+public class FightMenuView extends View{
 
-    private final String MENU = "\n"
+    public FightMenuView() {
+        super("\n"
                 + "\n--------------------------------------------------"
                 + "\n|  Fight Menu                                      |"
                 + "\n--------------------------------------------------"
@@ -23,48 +24,17 @@ public class FightMenuView {
                 + "\nB - How do you block orparry in a fight?"
                 + "\nW - How do you know you won the fight?"
                 + "\nQ - Quit fight menu"
-                + "\n--------------------------------------------------";
-        
-    public void displayFightMenu() {
-            char selection = ' ';
-            do {
-                
-                System.out.println(MENU); // display the help menu
-                
-                String input = this.getInput(); // get the user's selection
-                selection = input.charAt(0); // get first character of string
-                
-                this.doAction(selection); // do action based on selection
-                
-        } while (selection != 'Q'); // a selection that is not "Quit"
+                + "\n--------------------------------------------------");
     }
+    
         
-    private String getInput() {
-        boolean valid = false; // indicates if the option has be retrieved
-        String playersInput = null;
-        Scanner keyboard = new Scanner(System.in); // keyboard input stream
+    
+    @Override    
+    public boolean doAction(Object obj) {
         
-        while(!valid) { // while a valid option has not been retrieved
-            
-            // prompt for the player's menu choice
-            System.out.println("Enter a menu selection:");
-            
-            // get the option from the keyboard and trim off the blanks
-            playersInput = keyboard.nextLine();
-            playersInput = playersInput.trim();
-            
-            // if the option is invalid
-            if (playersInput == " ") {
-                System.out.println("Invalid menu choice - Please choose from the above options");
-                continue; // and repeat again
-            }
-            break; // out of the (exit) repetition
-        }
-        
-        return playersInput; // return the name
-    }
-        
-    public void doAction(char choice){
+        String value = (String) obj;
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
         
         switch (choice) {
             case 'H': // display how to fight character
@@ -83,11 +53,13 @@ public class FightMenuView {
                 this.displayWinInfo();
                 break;
             case 'Q': // quit the fight menu
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid Selection *** Try again");
                 break;
         }
+        
+        return false;
     }
 
     private void displayFightInfo() {
