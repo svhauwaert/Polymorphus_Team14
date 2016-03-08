@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author swalters
  */
-public class InventoryView {
+/*public class InventoryView {
     
       private final String MENU = "\n"
                 + "\n--------------------------------------------------"
@@ -98,4 +98,4 @@ public class InventoryView {
     private void displayUse() {
         System.out.println("\n*** Display parrying information ***");
     }
-}
+} */
