@@ -5,97 +5,69 @@
  */
 package byui.cit260.polymorphus.model;
 
+import java.awt.Point;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
  *
  * @author Spencer Van Hauwaert
+ * Modified by Spencer Van Hauwaert -> Implementing Association Relationships
  */
 public class CastleRoom implements Serializable{
     
-    // class instance variables
-    private String descRoom; // room description
-    private int visitRoom; // room been visited
-    private int typeRoom; // type of room
-    private double travelTimeRoom; // time removed from totalTime
+    private int row;
+    private int column;
+    private boolean visited;
+    private Scene scene;
+    private ArrayList<Character> character;
 
-    // default constructor
-    public CastleRoom() {
+    public int getRow() {
+        return row;
     }
 
-    
-    public String getDescRoom() {
-        return descRoom;
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    public void setDescRoom(String descRoom) {
-        this.descRoom = descRoom;
+    public int getColumn() {
+        return column;
     }
 
-    public int getVisitRoom() {
-        return visitRoom;
+    public void setColumn(int column) {
+        this.column = column;
     }
 
-    public void setVisitRoom(int visitRoom) {
-        this.visitRoom = visitRoom;
+    public boolean isVisited() {
+        return visited;
     }
 
-    public int getTypeRoom() {
-        return typeRoom;
+    public void setVisited(boolean visited) {
+        this.visited = visited;
     }
 
-    public void setTypeRoom(int typeRoom) {
-        this.typeRoom = typeRoom;
+    public Scene getScene() {
+        return scene;
     }
 
-    public double getTravelTimeRoom() {
-        return travelTimeRoom;
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 
-    public void setTravelTimeRoom(double travelTimeRoom) {
-        this.travelTimeRoom = travelTimeRoom;
+    public ArrayList<Character> getCharacter() {
+        return character;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.descRoom);
-        hash = 41 * hash + this.visitRoom;
-        hash = 41 * hash + this.typeRoom;
-        hash = 41 * hash + (int) (Double.doubleToLongBits(this.travelTimeRoom) ^ (Double.doubleToLongBits(this.travelTimeRoom) >>> 32));
-        return hash;
+    public void setCharacter(ArrayList<Character> character) {
+        this.character = character;
     }
 
-    @Override
-    public String toString() {
-        return "CastleRoom{" + "descRoom=" + descRoom + ", visitRoom=" + visitRoom + ", typeRoom=" + typeRoom + ", travelTimeRoom=" + travelTimeRoom + '}';
-    }
+    private static class Scene {
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
+        public Scene() {
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final CastleRoom other = (CastleRoom) obj;
-        if (!Objects.equals(this.descRoom, other.descRoom)) {
-            return false;
-        }
-        if (this.visitRoom != other.visitRoom) {
-            return false;
-        }
-        if (this.typeRoom != other.typeRoom) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.travelTimeRoom) != Double.doubleToLongBits(other.travelTimeRoom)) {
-            return false;
-        }
-        return true;
     }
-    
     
     
 }

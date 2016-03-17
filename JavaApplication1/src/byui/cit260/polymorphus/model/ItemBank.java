@@ -5,34 +5,27 @@
  */
 package byui.cit260.polymorphus.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author swalters
+ * Modified by Spencer Van Hauwaert -> Implementing Association Relationships
  */
-public class ItemBank implements Serializable{
-    private String description;
-
-    public ItemBank() {
-    }
-
+public enum ItemBank implements Serializable{
+    
+    Key("This is a key to unlock a door."),
+    Torch("This is a torch to be used in dark rooms.");
     
     
-    public String getDescription() {
-        return description;
-    }
+    private final String description;
+    private final Point coordinates;
 
-    public void setDescription(String description) {
+    ItemBank(String description) {
         this.description = description;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + Objects.hashCode(this.description);
-        return hash;
+        coordinates = new Point(1,1);
     }
 
     @Override
@@ -41,23 +34,7 @@ public class ItemBank implements Serializable{
     }
     
     
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final ItemBank other = (ItemBank) obj;
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        return true;
-    }
+    
     
     
     

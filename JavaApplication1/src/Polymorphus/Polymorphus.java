@@ -8,7 +8,7 @@ package Polymorphus;
 import byui.cit260.polymorphus.model.Game;
 import byui.cit260.polymorphus.model.Player;
 import byui.cit260.polymorphus.model.InventoryItem;
-import byui.cit260.polymorphus.model.Map;
+//import byui.cit260.polymorphus.model.Map;
 import byui.cit260.polymorphus.model.ItemBank;
 import byui.cit260.polymorphus.model.Weapons;
 import byui.cit260.polymorphus.model.Armor;
@@ -24,7 +24,7 @@ import byui.cit260.polymorphus.view.StartProgramView;
 
 /**
  *
- * @author Spencer
+ * @author Spencer Van Hauwaert
  * @author Spencer Walters
  */
 public class Polymorphus {

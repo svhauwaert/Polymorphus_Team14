@@ -5,6 +5,7 @@
  */
 package byui.cit260.polymorphus.model;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -18,6 +19,58 @@ public class Game implements Serializable{
     private String menu;
     private int saveGame;
     private int loadGame;
+    
+    // Added the cardinality to the classes
+    
+    private Player player;
+    private Character[] character; // Actors
+    private Map[] map;
+    private ItemBank[] itemBank;
+    ArrayList<InventoryItem> inventory = new ArrayList<>();
+
+     
+    
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Character[] getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character[] character) {
+        this.character = character;
+    }
+
+    public Map[] getMap() {
+        return map;
+    }
+
+    public void setMap(Map[] map) {
+        this.map = map;
+    }
+
+    public ItemBank[] getItemBank() {
+        return itemBank;
+    }
+
+    public void setItemBank(ItemBank[] itemBank) {
+        this.itemBank = itemBank;
+    }
+
+    public ArrayList<InventoryItem> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(ArrayList<InventoryItem> inventory) {
+        this.inventory = inventory;
+    }
+
+    
 
     public Game() {
     }
@@ -95,6 +148,22 @@ public class Game implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public void setInventory(InventoryItem[] inventoryList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setMap(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setItemBank(ItemBank itemBank) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setCharacter(java.lang.Character character) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

@@ -13,6 +13,10 @@ import java.util.Objects;
  * @author Spencer Van Hauwaert
  */
 public class SceneType implements Serializable{
+
+    public static Object values() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     // class instance variables
     private String descScene; // description of the type of scene in the room
@@ -95,6 +99,22 @@ public class SceneType implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public static class start {
+
+        public static int ordinal() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public start() {
+        }
+    }
+
+    public static class entrance {
+
+        public entrance() {
+        }
     }
     
     

@@ -5,6 +5,7 @@
  */
 package byui.cit260.polymorphus.view;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -23,6 +24,7 @@ public class HelpMenuView extends View{
                 + "\nD - How to contact the Doctor"
                 + "\nA - How to change armor and weapons"
                 + "\nF - How to fight"
+                + "\nT - Test the Array function"
                 + "\nQ - Quit menu"
                 + "\n--------------------------------------------------");
     }    
@@ -49,6 +51,9 @@ public class HelpMenuView extends View{
                 break;
             case 'F': // display how to fight
                 this.displayFightMenu();
+                break;
+            case 'T': // display inventory item array alphabetically
+                this.displayArray();
                 break;
             case 'Q': // quit the help menu
                 return true;
@@ -80,5 +85,21 @@ public class HelpMenuView extends View{
         FightMenuView fightMenu = new FightMenuView();
         fightMenu.display();
     }
+
+    private void displayArray() {
+        
+        String[] InventoryItems = {"Dragon Scale", "Orange Fruit", "WaterLily", "Gold Crown", "Diamond Necklace", 
+            "Sword", "Staff", "Ring", "Apron", "Wand", "Pighead", "Book"};
+        
+        this.getSortedItems(InventoryItems);
+        
+        
+    }
+    
+    private void getSortedItems(String[] items) {
+            Arrays.sort(items);
+            for(int i = 0; i < items.length; i++)
+                System.out.println(items[i]);
+        }
     
 }

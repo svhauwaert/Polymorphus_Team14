@@ -11,16 +11,56 @@ import java.io.Serializable;
  *
  * @author swalters
  */
-public class Map implements Serializable{
+/*public class Map implements Serializable{
    
     // Class instance vairiable
     private double rowCount;
     private double columnCount;
+    private CastleRoom[][] castleRoom;
+    private int noOfRows;
+    private int noOfColumns;
+    private int column;
+    private int row;
 
+    
+    
     public Map() {
+    }
+
+    public Map(int noOfRows, int noOfColumns) {
+        
+        if(noOfRows < 1 || noOfColumns < 1) {
+        System.out.println("The number of rows and columns must be > zero");
+        return;
+    }
+    
+    this.noOfRows = noOfRows;
+    this.noOfColumns = noOfColumns;
+    
+    // create 2-D array for castle room objects
+    this.castleRoom = new CastleRoom[noOfRows][noOfColumns];
+    
+    for (int row = 0; row < noOfRows; row++) {
+        for (int column = 0; column < noOfColumns; column++) {
+            CastleRoom castleRoom = new CastleRoom();
+            castleRoom.setColumn(column);
+            castleRoom.setRow(row);
+            castleRoom.setVisited(false);
+            
+            castleRoom[row][column] = CastleRoom;
+        }
+    }
     }
     
     
+    public CastleRoom[][] getCastleRoom() {
+        return castleRoom;
+    }
+
+    public void setCastleRoom(CastleRoom[][] castleRoom) {
+        this.castleRoom = castleRoom;
+    }
+
     
 
     public double getRowCount() {
@@ -72,8 +112,10 @@ public class Map implements Serializable{
         }
         return true;
     }
+
+   
     
     
     
     
-}
+*/

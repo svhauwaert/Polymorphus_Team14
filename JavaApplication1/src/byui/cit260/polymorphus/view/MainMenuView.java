@@ -5,6 +5,8 @@
  */
 package byui.cit260.polymorphus.view;
 
+import Polymorphus.Polymorphus;
+import byui.cit260.polymorphus.control.GameControl;
 import java.util.Scanner;
 
 /**
@@ -12,6 +14,7 @@ import java.util.Scanner;
  * @author swalters
  * 
  * Modified by Spencer Van Hauwaert
+ * Added New game function -> Spencer Van Hauwaert
  */
 public class MainMenuView extends View {
     
@@ -60,7 +63,12 @@ public class MainMenuView extends View {
         
         
     private void startNewGame() {
-        System.out.println("*** displayGameGoal function ***");
+        // create a new game
+        GameControl.createNewGame(Polymorphus.getPlayer());
+        
+        // display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void startExsistingGame() {
