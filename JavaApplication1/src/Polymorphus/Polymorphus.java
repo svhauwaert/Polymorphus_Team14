@@ -20,6 +20,7 @@ import byui.cit260.polymorphus.model.Potion;
 import byui.cit260.polymorphus.model.SceneType;
 import byui.cit260.polymorphus.model.Character;
 import byui.cit260.polymorphus.view.StartProgramView;
+import java.io.PrintWriter;
 
 
 /**
@@ -53,6 +54,14 @@ public class Polymorphus {
 
     public static void setPlayer(Player player) {
         Polymorphus.player = player;
+    }
+
+    public static PrintWriter getOutFile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static PrintWriter getLogFile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
