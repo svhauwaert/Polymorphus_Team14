@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author swalters
  */
-/*public class Map implements Serializable{
+public class Map implements Serializable{
    
     // Class instance vairiable
     private double rowCount;
@@ -47,7 +47,7 @@ import java.io.Serializable;
             castleRoom.setRow(row);
             castleRoom.setVisited(false);
             
-            castleRoom[row][column] = CastleRoom;
+            //CastleRoom[row][column] = CastleRoom;
         }
     }
     }
@@ -112,10 +112,11 @@ import java.io.Serializable;
         }
         return true;
     }
+}
 
    
     
     
     
     
-*/
+

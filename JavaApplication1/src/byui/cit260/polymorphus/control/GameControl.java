@@ -21,14 +21,14 @@ import byui.cit260.polymorphus.model.Player;
 public class GameControl {
 
     public static void createNewGame(Player player) {
-        Game game = new Game(); // create new game
-        Polymorphus.setCurrentGame(game); // save in Polymorphus
+        Game newGame = new Game(); // create new game
+        Polymorphus.setCurrentGame(newGame); // save in Polymorphus
         
-        game.setPlayer(player); // save player in game
+        newGame.setPlayer(player); // save player in game
         
         // create the inventory list and save in the game
         InventoryItem[] inventoryList = GameControl.createInventoryList();
-        game.setInventory(inventoryList);
+        newGame.setInventory(inventoryList);
         
         //Character character = new Character(); // create new characters
         //game.setCharacter(character); //

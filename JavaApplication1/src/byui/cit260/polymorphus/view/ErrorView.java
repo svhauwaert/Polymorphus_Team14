@@ -11,13 +11,13 @@ import java.io.PrintWriter;
 
 public class ErrorView {
     private static final PrintWriter errorFile =Polymorphus.getOutFile();
-    private static final PrintWriter logFile =Polymorphus.getLogFile();
+    //private static final PrintWriter logFile =Polymorphus.getLogFile();
     public static void display(String className,String errorMessage){
         errorFile.println(
         "------------------------------------------------------"
         +"\n-ERROR -"+  errorMessage
         +"\n---------------------------------------------------");
-        logFile.println(className+"-"+ errorMessage);   
+        //logFile.println(className+"-"+ errorMessage);   
     }
 
     static void display(String name) {
