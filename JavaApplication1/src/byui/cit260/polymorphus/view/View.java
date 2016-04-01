@@ -1,6 +1,9 @@
 
 package byui.cit260.polymorphus.view;
 
+import Polymorphus.Polymorphus;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -12,7 +15,11 @@ import java.util.Scanner;
 
 public abstract class View implements ViewInterface {
     
-    Scanner keyboard = new Scanner(System.in);
+    private String message;
+    
+    protected final BufferedReader keyboard = Polymorphus.getInFile();
+    protected final PrintWriter console = Polymorphus.getOutFile();
+    
     protected String displayMessage;
     
     public View(String message) {
@@ -24,7 +31,8 @@ public abstract class View implements ViewInterface {
             String value = "";
             boolean done = false;
             do {
-                System.out.println(this.displayMessage); // display the fight scenerio
+                this.console.println(this.message);
+                //System.out.println(this.displayMessage); // display the fight scenerio
                 value = this.getInput(); // get the user's selection
                 done = this.doAction(value); // do action based on selection
         }
@@ -32,22 +40,27 @@ public abstract class View implements ViewInterface {
     }
     
     public String getInput(){
+        
+        Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String selection = null;
-        
-        while (!valid) { // while a value has not been entered
-            // get the value entered from the keyboard
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            
-            if (selection.length() < 1) { // blank value entered
-                System.out.println("You must enter a value.");
-                continue;
+        try{
+            while (!valid) { // while a value has not been entered
+
+                // get the value entered from the keyboard
+                selection = this.keyboard.readLine();
+                selection = selection.trim();
+
+                if (selection.length() < 1) { // blank value entered
+                    System.out.println("\n*** Invalid selection *** Try again");
+                    continue;
+                }
+
+                break;
             }
-            
-            break;
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
         }
-        
         return selection; // return the name
     }
     

@@ -3,16 +3,18 @@ package byui.cit260.polymorphus.view;
 import byui.cit260.polymorphus.control.ProgramControl;
 import byui.cit260.polymorphus.model.Player;
 import java.util.Scanner;
+import java.io.Console;
 
 /**
  *
  * @author Spencer Van Hauwaert
  *         
  */
-public class StartProgramView {
+
+public class StartProgramView extends View{
     
-    public StartProgramView() {
-        
+    public StartProgramView(String promptMessage) {
+        super(promptMessage);
     }
     
     public void startProgram() {
@@ -81,39 +83,42 @@ public class StartProgramView {
     }
 
     private String getPlayersName() {
-        boolean valid = false; // indicates if the name has be retrieved
-        String playersName = null;
-        Scanner keyboard = new Scanner(System.in); // keyboard input stream
-        
-        while(!valid) { // while a valid name has not been retrieved
+        //To change body of generated methods, choose Tools | Templates.
+        boolean valid=false;
+        String playersName=null;
+      try{
+        //Scanner keyboard = new Scanner(System.in);
+        while(!valid){
+            this.console.println("Enter the player's name");
             
-            // prompt for the player's name
-            System.out.println("Enter the player's name below:");
-            
-            // get the name from the keyboard and trim off the blanks
-            playersName = keyboard.nextLine();
-            playersName = playersName.trim();
-            
-            //try{
-            // if the name is invalid (less than two character in length)
-            if (playersName.length() < 2) {
-                System.out.println("Invalid name - the name must not be blank");
-                continue; // and repeat again
+            //playersName=keyboard.nextLine();
+            playersName=this.keyboard.readLine();
+            playersName=playersName.trim();
+            if(playersName.length()<2) {
+                ErrorView.display(this.getClass().getName(),"Invalid name-it must not be blank");
+                continue;}
+            break;
             }
-            break; // out of the (exit) repetition
-        }
-        
-        return playersName; // return the name
+        }catch(Exception e)
+        {
+            ErrorView.display(this.getClass().getName(),"Error reading input: "+e.getMessage());
+      }
+      return playersName;
     }
     
     public void displayWelcomeMessage(Player player) {
         System.out.println("\n\n=============================================");
         System.out.println("\tWelcome to the game " + player.getName());
-        System.out.println("We hope you have a lot of fun!");
+        System.out.println("\tWe hope you have a lot of fun!");
         System.out.println("=============================================");
     }
 
     public void display() {
+        
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

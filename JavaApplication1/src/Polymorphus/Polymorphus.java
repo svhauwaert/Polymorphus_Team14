@@ -8,7 +8,7 @@ package Polymorphus;
 import byui.cit260.polymorphus.model.Game;
 import byui.cit260.polymorphus.model.Player;
 import byui.cit260.polymorphus.model.InventoryItem;
-//import byui.cit260.polymorphus.model.Map;
+import byui.cit260.polymorphus.model.Map;
 import byui.cit260.polymorphus.model.ItemBank;
 import byui.cit260.polymorphus.model.Weapons;
 import byui.cit260.polymorphus.model.Armor;
@@ -40,6 +40,16 @@ public class Polymorphus {
     
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        Polymorphus.logFile = logFile;
+    }
 
     
     public static void main(String[] args) {
@@ -47,12 +57,17 @@ public class Polymorphus {
         try{
             
             //open the character stream files for the end user input and output
-            Polymorphus.inFile =
-                    new BufferedReader(new InputStreamReader(System.in));
+            //Polymorphus.inFile =
+            //        new BufferedReader(new InputStreamReader(System.in));
             
             Polymorphus.outFile = new PrintWriter(System.out, true);
+            
+            // open log file
+            String filePath = "log.txt";
+            Polymorphus.logFile = new PrintWriter(filePath);
+            
             // create StartProgramView and start the program
-            StartProgramView startProgramView = new StartProgramView();
+            StartProgramView startProgramView = new StartProgramView("");
             startProgramView.display();
             return;
         
@@ -65,8 +80,14 @@ public class Polymorphus {
         }
         finally {
             try {
-                Polymorphus.inFile.close();
-                Polymorphus.outFile.close();
+                if (Polymorphus.inFile != null)
+                    Polymorphus.inFile.close();
+                
+                if (Polymorphus.outFile != null)
+                    Polymorphus.outFile.close();
+                
+                if (Polymorphus.logFile != null)
+                    Polymorphus.logFile.close();
             } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;
