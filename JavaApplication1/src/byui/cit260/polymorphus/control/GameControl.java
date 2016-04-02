@@ -12,11 +12,14 @@ import byui.cit260.polymorphus.model.Item;
 import byui.cit260.polymorphus.model.ItemBank;
 //import byui.cit260.polymorphus.model.Map;
 import byui.cit260.polymorphus.model.Player;
+import exceptions.GameControlException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 
 /**
  *
- * @author Spencer
+ * @author Spencer Van Hauwaert
  */
 public class GameControl {
 
@@ -62,6 +65,18 @@ public class GameControl {
         inventory[Item.torch.ordinal()] = torch;
                 
         return inventory;
+    }
+    
+    public static void saveGame(Game game, String filePath)
+            throws GameControlException {
+        try(FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
     }
     
 }

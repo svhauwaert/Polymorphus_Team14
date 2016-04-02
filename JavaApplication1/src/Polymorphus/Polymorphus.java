@@ -57,8 +57,8 @@ public class Polymorphus {
         try{
             
             //open the character stream files for the end user input and output
-            //Polymorphus.inFile =
-            //        new BufferedReader(new InputStreamReader(System.in));
+            Polymorphus.inFile =
+                    new BufferedReader(new InputStreamReader(System.in));
             
             Polymorphus.outFile = new PrintWriter(System.out, true);
             
