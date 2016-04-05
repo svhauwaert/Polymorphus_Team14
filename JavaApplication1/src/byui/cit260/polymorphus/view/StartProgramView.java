@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package byui.cit260.polymorphus.view;
 
 import byui.cit260.polymorphus.control.ProgramControl;
@@ -8,41 +13,17 @@ import java.io.Console;
 /**
  *
  * @author Spencer Van Hauwaert
- *         
  */
+public class StartProgramView extends View{ 
 
-public class StartProgramView extends View{
-    
     public StartProgramView(String promptMessage) {
         super(promptMessage);
     }
-    
-    public void startProgram() {
-        
-        // Display the banner screen
-        this.displayBanner();
-        
-        // prompt the player to enter their name - retrieve  the name of the player
-        String playersName = this.getPlayersName();
-        
-        // Create the player object and save the player object in the ProgramControl class
-        Player player = ProgramControl.createPlayer(playersName);
-        
-        // Display a personalized welcome message
-        this.displayWelcomeMessage(player);
-        
-        // Display the main menu.
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();
-        //FightCharacterView fightCharacterView = new FightCharacterView();
-        //fightCharacterView.displayFightScene();
-    }
-
     private void displayBanner() {
         System.out.println("\n\n****************************************************");
         
         System.out.println("*                                                  *"
-                        + "\n*            CURE FOR POLYMORPHOUS                 *"
+                        + "\n*            CURE FOR POLYMORPHUS                  *"
                         + "\n*                                                  *"
                         + "\n* Cure for Polymorphus is a text based role        *"
                         + "\n* playing game. In this game, you will be taking   *"
@@ -81,8 +62,20 @@ public class StartProgramView extends View{
         
         System.out.println("****************************************************");
     }
+        
+        //String playersName =this.getPlayersName();
+        
 
-    private String getPlayersName() {
+public void startProgram(){
+    this.displayBanner();
+    String playersName=this.getPlayersName();
+    Player player = ProgramControl.createPlayer(playersName);
+    this.displayWelcomeMessage(player);
+    MainMenuView mainMenu=new MainMenuView();
+    mainMenu.display();
+}
+
+private String getPlayersName() {
         //To change body of generated methods, choose Tools | Templates.
         boolean valid=false;
         String playersName=null;
@@ -105,23 +98,16 @@ public class StartProgramView extends View{
       }
       return playersName;
     }
-    
-    public void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n=============================================");
-        System.out.println("\tWelcome to the game " + player.getName());
-        System.out.println("\tWe hope you have a lot of fun!");
-        System.out.println("=============================================");
-    }
+      
 
-    public void display() {
-        
+    private void displayWelcomeMessage(Player player) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("\n\n============================================");
+        this.console.println("\t Welcome to the game  "+player.getName());
+        this.console.println("\t We hope you have a lot of fun!");
+        this.console.println("================================================");
     }
-
     @Override
-    public boolean doAction(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-    
+    public boolean doAction(Object obj) {return false;}
 }
+

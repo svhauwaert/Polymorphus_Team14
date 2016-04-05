@@ -7,7 +7,12 @@ package byui.cit260.polymorphus.view;
 
 import Polymorphus.Polymorphus;
 import byui.cit260.polymorphus.control.GameControl;
+import byui.cit260.polymorphus.model.Game;
+import exceptions.GameControlException;
 import java.util.Scanner;
+import java.io.Console;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
 /**
  *
@@ -71,12 +76,24 @@ public class MainMenuView extends View {
         gameMenu.display();
     }
 
-    private void startExsistingGame() {
-        System.out.println("*** displayMoveGame function ***");
+    public static void startExsistingGame(String filepath) // Added by Spencer Van Hauwaert
+                        throws GameControlException{ 
+        Game game = null;
+        
+        try(FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        // close the output file
+        Polymorphus.setCurrentGame(game);
     }
 
     private void displayHelpMenu() {
-        System.out.println("*** displayDoctorGame function ***");
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
@@ -84,7 +101,7 @@ public class MainMenuView extends View {
     private void saveGame() {
         //prompt for and get the name of the file to save the game in
         this.console.println("\n\nEnter the file path for the file where the game"
-                            + "is to be saved.");
+                            + " is to be saved.");
         String filePath = this.getInput();
         
         try {
