@@ -56,17 +56,17 @@ public class GameControl {
         InventoryItem[] inventory =
             new InventoryItem[1];
         
-        InventoryItem key = new InventoryItem();
-        key.setDescription("Key");
-        key.setQuantityInStock(0);
-        key.setRequiredAmount(0);
-        inventory[Item.key.ordinal()] = key;
+        InventoryItem dragonScale = new InventoryItem();
+        dragonScale.setDescription("Dragon Scale");
+        dragonScale.setQuantityInStock(0);
+        dragonScale.setRequiredAmount(0);
+        inventory[Item.dragonscale.ordinal()] = dragonScale;
         
-        InventoryItem torch = new InventoryItem();
-        torch.setDescription("Torch");
-        torch.setQuantityInStock(0);
-        torch.setRequiredAmount(0);
-        inventory[Item.torch.ordinal()] = torch;
+        InventoryItem knife = new InventoryItem();
+        knife.setDescription("Knife");
+        knife.setQuantityInStock(0);
+        knife.setRequiredAmount(0);
+        inventory[Item.knife.ordinal()] = knife;
                 
         return inventory;
     }

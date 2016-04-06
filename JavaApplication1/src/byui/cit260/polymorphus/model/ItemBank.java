@@ -16,8 +16,24 @@ import java.util.Objects;
  */
 public enum ItemBank implements Serializable{
     
-    Key("This is a key to unlock a door."),
-    Torch("This is a torch to be used in dark rooms.");
+    Statue("This is an statue of an angel covering its face with its hands."),
+    Dragonscale("This is a dragonscale you got from killing the dragon. It has "
+            + "a chromatic look to it."),
+    Knife("You found this knife in the kitchen. Might as well use it since the"
+            + " chef isn't."),
+    Orange("You plucked this delicious looking fruit from the orange tree in "
+            + "the arbour"),
+    WaterLily("You found thid water lily to be so beautiful, that you had to "
+            + "collect it and carefully store it in your pocket for later use."),
+    GoldCrown("You stole this from the King's bedroom. Better not get caught "
+            + "with it."),
+    DiamondNecklace("This beautiful diamond necklace you found was in the "
+            + "Queens bedroom."),
+    Sword("This sword was once the Prince's, now it's yours."),
+    potion("This potion will not save your loved one by itself, you'll need to"
+            + " combine ingredients with it to find the cure."),
+    cauldron("This bubbling cauldron is necessary to mix your potion.");
+    
     
     
     private final String description;
@@ -32,12 +48,4 @@ public enum ItemBank implements Serializable{
     public String toString() {
         return "ItemBank{" + "description=" + description + '}';
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }

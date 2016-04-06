@@ -13,23 +13,22 @@ import java.io.Serializable;
  */
 public enum Items implements Serializable {
     
-    Statue("It is a huge looking monster with huge teeth sticking out and drool."),
-    Throne("He is a very large fat ugly looking humanoid. He looks like he could hurt you very badly."),
-    DragonScale(""),
-    OrangeFruit(""),
-    WaterLily(""),
-    GoldCrown(""),
-    DiamondNecklace(""),
-    Sword(""),
-    Staff(""),
-    Ring(""),
-    Cauldron(""),
-    Apron(""),
-    Wand(""),
-    Pighead(""),
-    Book("Encyclopedia"),
-    Fireplace("");
-    
+    Statue("Weeping Angel"),
+    Throne("Gold Throne"),
+    DragonScale("Chromatic"),
+    OrangeFruit("Juicy fruit"),
+    WaterLily("Pretty flower"),
+    GoldCrown("Golden Crown"),
+    DiamondNecklace("Diamond Necklace"),
+    Sword("Sharp bladed sword"),
+    Staff("Old Wooden Staff"),
+    Ring("Pearl ring"),
+    Cauldron("Large black cauldron"),
+    Apron("Bloody stained apron"),
+    Wand("Thin star tipped wand"),
+    Pighead("Rosted pighead with apple in the mouth"),
+    Book("Encyclopedia");
+        
     private final String description;
     
     Items(String description) {

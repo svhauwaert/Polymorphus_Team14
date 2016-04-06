@@ -10,6 +10,17 @@ package byui.cit260.polymorphus.model;
  * @author Spencer
  */
 public enum Item {
-    key,
-    torch;
+    statue,
+    throne,
+    dragonscale,
+    knife,
+    fruitTree,
+    orange,
+    waterLily,
+    goldCrown,
+    diamondNecklace,
+    sword,
+    potion,
+    cauldron;
+    
 }
