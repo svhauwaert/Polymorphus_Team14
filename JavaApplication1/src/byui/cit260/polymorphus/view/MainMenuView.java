@@ -43,7 +43,7 @@ public class MainMenuView extends View {
             String value = (String) obj;
             value = value.toUpperCase();
             char choice = value.charAt(0);
-        
+                    
             switch (choice) {
                 case 'N': // Start new Game
                     this.startNewGame();
@@ -76,21 +76,16 @@ public class MainMenuView extends View {
         gameMenu.display();
     }
 
-    public static void startExsistingGame(String filepath) // Added by Spencer Van Hauwaert
-                        throws GameControlException{ 
-        Game game = null;
-        
-        try(FileInputStream fips = new FileInputStream(filepath)) {
-            ObjectInputStream input = new ObjectInputStream(fips);
-            
-            game = (Game) input.readObject();
+    private void startExsistingGame() {// Added by Spencer Van Hauwaert
+                        this.console.println("\nEnter the file path for file where the game is to be saved");
+        String filePath = this.getInput();
+        try {
+            GameControl.getSavedGame(filePath);
+        }catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
         }
-        catch(Exception e) {
-            throw new GameControlException(e.getMessage());
-        }
-        
-        // close the output file
-        Polymorphus.setCurrentGame(game);
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void displayHelpMenu() {

@@ -13,7 +13,11 @@ import byui.cit260.polymorphus.model.ItemBank;
 //import byui.cit260.polymorphus.model.Map;
 import byui.cit260.polymorphus.model.Player;
 import exceptions.GameControlException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 
@@ -77,6 +81,24 @@ public class GameControl {
         catch(Exception e) {
             throw new GameControlException(e.getMessage());
         }
+    }
+
+    public static void getSavedGame(String filePath)
+        throws GameControlException{
+        Game game = null;
+        try (FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream output = new ObjectInputStream (fips);
+            game = (Game) output.readObject();
+            Polymorphus.setCurrentGame(game);
+            //game.setInventory(inventoryList);
+            }
+        catch (FileNotFoundException fnfe){
+            throw new GameControlException(fnfe.getMessage());
+            }
+        catch (Exception e){
+             throw new GameControlException(e.getMessage());
+        }
+        
     }
     
 }
